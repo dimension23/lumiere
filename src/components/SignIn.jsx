@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
-const SignIn = () => {
+export default function SignIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { signin } = useAuth();
@@ -43,13 +43,14 @@ const SignIn = () => {
               Sign In
             </Button>
           </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to="/forgot-password">Forgot Password</Link>
+          </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        New User? <Link to="/signup">Sign Up</Link>
+        Don't have an account? <Link to="/signup">Sign Up</Link>
       </div>
     </>
   );
-};
-
-export default SignIn;
+}
