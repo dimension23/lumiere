@@ -1,3 +1,3 @@
 # Lumiere
 
-Bootstrap project for Firebase Authentication with React
+Bootstrap project for Authentication in React using Firebase
