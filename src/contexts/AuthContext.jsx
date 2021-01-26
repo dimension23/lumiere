@@ -1,5 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { auth } from "../firebase";
+import {
+  auth,
+  googleAuthProvider,
+  twitterAuthProvider,
+  githubAuthProvider,
+} from "../firebase";
 
 const AuthContext = React.createContext();
 
@@ -17,6 +22,18 @@ export function AuthProvider({ children }) {
 
   function signin(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
+  }
+
+  function signInWithGoogle() {
+    return auth.signInWithPopup(googleAuthProvider);
+  }
+
+  function signInWithTwitter() {
+    return auth.signInWithPopup(twitterAuthProvider);
+  }
+
+  function signInWithGithub() {
+    return auth.signInWithPopup(githubAuthProvider);
   }
 
   function signout() {
@@ -47,6 +64,9 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     signin,
+    signInWithGoogle,
+    signInWithTwitter,
+    signInWithGithub,
     signout,
     resetPassword,
     updateEmail,
