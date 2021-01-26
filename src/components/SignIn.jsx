@@ -48,10 +48,10 @@ export default function SignIn() {
 
   return (
     <>
-      <Card>
+      <Card className="text-center float-shadow">
         <Card.Body>
           <Button
-            className="btn btn-light w-100 mt-3 p-3 rounded-pill"
+            className="btn btn-light w-70 mt-3 p-3 rounded-pill"
             disabled={loading}
             onClick={handleSignInWithGoogle}
           >
@@ -59,7 +59,7 @@ export default function SignIn() {
             <span className="ml-2">Continue with Google</span>
           </Button>
           <Button
-            className="btn btn-light w-100 mt-3 p-3 rounded-pill"
+            className="btn btn-light w-70 mt-3 p-3 rounded-pill"
             disabled={loading}
             onClick={handleSignInWithTwitter}
           >
@@ -67,7 +67,7 @@ export default function SignIn() {
             <span className="ml-2">Continue with Twitter</span>
           </Button>
           <Button
-            className="btn btn-light w-100 mt-3 p-3 rounded-pill"
+            className="btn btn-light w-70 mt-3 p-3 rounded-pill"
             disabled={loading}
             onClick={handleSignInWithGithub}
           >
